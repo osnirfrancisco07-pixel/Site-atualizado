@@ -1,0 +1,371 @@
+/* ============================================================
+   RESET E BASE
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ============================================================
+   HEADER E LOGO
+   ============================================================ */
+header {
+    background: #0d1b2a;
+    color: #fff;
+    padding: 10px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.sub-logo {
+    display: block;
+    font-size: 11px;
+    color: #00ffcc; /* Cor de destaque da Agência CAPS */
+    font-weight: normal;
+}
+
+/* ============================================================
+   TICKER (COTAÇÕES COM SCROLL)
+   ============================================================ */
+.ticker-container {
+    width: 100%;
+    overflow: hidden;
+    background: #111;
+    margin-top: 10px;
+    border-top: 1px solid #333;
+}
+
+.ticker-wrapper {
+    display: flex;
+    width: max-content;
+    animation: scrollTicker 25s linear infinite;
+}
+
+.ticker-content {
+    display: flex;
+    gap: 40px;
+    padding: 8px 40px;
+}
+
+.ticker-content span {
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Cores das Moedas */
+#cotacao-ticker span:nth-child(1) { color: #00ffcc; } /* Dólar */
+#cotacao-ticker span:nth-child(2) { color: #ffd700; } /* Euro */
+#cotacao-ticker span:nth-child(3) { color: #ff4d4d; } /* Bitcoin */
+
+@keyframes scrollTicker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ============================================================
+   MENU E NAVEGAÇÃO
+   ============================================================ */
+.navbar {
+    margin-top: 10px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    list-style: none;
+    background: #1b263b;
+    padding: 10px;
+    scrollbar-width: none; /* Firefox */
+}
+
+.nav-menu::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.nav-menu li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    display: inline-block;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.nav-menu li a:hover {
+    background: #415a77;
+    border-radius: 5px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* ============================================================
+   BARRA DE BUSCA
+   ============================================================ */
+.search-bar-container {
+    margin: 10px 0;
+}
+
+.search-box {
+    display: flex;
+    max-width: 500px;
+    margin: auto;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-box button {
+    padding: 10px 15px;
+    border: none;
+    background: #415a77;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    background: #00ffcc;
+    color: #0d1b2a;
+}
+
+/* ============================================================
+   CONTEÚDO PRINCIPAL (MAIN)
+   ============================================================ */
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.weather-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    margin: 0 auto 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.noticia h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #0d1b2a;
+}
+
+.noticia p {
+    margin-bottom: 15px;
+    font-size: 17px;
+    color: #444;
+}
+
+/* ============================================================
+   CARDS DE PUBLICIDADE
+   ============================================================ */
+.ad-card {
+    background: #fff3cd;
+    border: 2px dashed #ffc107;
+    margin: 25px 0;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.ad-label {
+    font-size: 10px;
+    font-weight: bold;
+    color: #856404;
+    display: block;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.ad-content p {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.ad-content a {
+    background: #ffc107;
+    color: #000;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.ad-content a:hover {
+    background: #e0a800;
+}
+
+/* ============================================================
+   PAINEL ADMINISTRATIVO (MODAL OCULTO)
+   ============================================================ */
+.admin-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+}
+
+.admin-content {
+    background: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.admin-content input {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.admin-content button {
+    width: 100%;
+    padding: 12px;
+    background: #0d1b2a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.btn-tool {
+    background: #415a77 !important;
+}
+
+/* ============================================================
+   RODAPÉ (FOOTER COMPLETO)
+   ============================================================ */
+footer {
+    background: #0d1b2a;
+    color: #fff;
+    padding: 40px 20px;
+    margin-top: 40px;
+    border-top: 4px solid #00ffcc;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-info h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.footer-social {
+    margin: 25px 0;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 28px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #00ffcc;
+    transform: translateY(-5px);
+}
+
+.social-icon.fb:hover { color: #1877f2; }
+.social-icon.insta:hover { color: #e4405f; }
+.social-icon.whats:hover { color: #25d366; }
+
+.footer-copy {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 14px;
+}
+
+/* ============================================================
+   RESPONSIVIDADE (MOBILE)
+   ============================================================ */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        background: #1b263b;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        z-index: 10;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .noticia h1 {
+        font-size: 22px;
+    }
+
+    .search-box {
+        width: 95%;
+    }
+}
+
+
+
